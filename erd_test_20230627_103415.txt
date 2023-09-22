@@ -1,0 +1,247 @@
+﻿-- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+
+-- cafe_branch Table Create SQL
+-- 테이블 생성 SQL - cafe_branch
+CREATE TABLE cafe_branch
+(
+    branch_code    VARCHAR2(20)    NOT NULL, 
+    branch_name    VARCHAR2(50)    NOT NULL, 
+    name           VARCHAR2(30)    NOT NULL, 
+    tel            VARCHAR2(20)    NOT NULL, 
+    address        VARCHAR2(50)    NOT NULL, 
+    open_date      VARCHAR2(50)    NOT NULL, 
+    close_date     VARCHAR2(50)    NULL, 
+     PRIMARY KEY (branch_code)
+);
+
+-- 테이블 Comment 설정 SQL - cafe_branch
+COMMENT ON TABLE cafe_branch IS '카페 지점 관리 테이블';
+
+-- 컬럼 Comment 설정 SQL - cafe_branch.branch_code
+COMMENT ON COLUMN cafe_branch.branch_code IS '지점코드';
+
+-- 컬럼 Comment 설정 SQL - cafe_branch.branch_name
+COMMENT ON COLUMN cafe_branch.branch_name IS '지점명';
+
+-- 컬럼 Comment 설정 SQL - cafe_branch.name
+COMMENT ON COLUMN cafe_branch.name IS '점주명';
+
+-- 컬럼 Comment 설정 SQL - cafe_branch.tel
+COMMENT ON COLUMN cafe_branch.tel IS '전화번호';
+
+-- 컬럼 Comment 설정 SQL - cafe_branch.address
+COMMENT ON COLUMN cafe_branch.address IS '주소';
+
+-- 컬럼 Comment 설정 SQL - cafe_branch.open_date
+COMMENT ON COLUMN cafe_branch.open_date IS '오픈날짜';
+
+-- 컬럼 Comment 설정 SQL - cafe_branch.close_date
+COMMENT ON COLUMN cafe_branch.close_date IS '폐점날짜';
+
+
+-- material_code Table Create SQL
+-- 테이블 생성 SQL - material_code
+CREATE TABLE material_code
+(
+    material_code    VARCHAR2(20)    NOT NULL, 
+    material_name    VARCHAR2(20)    NOT NULL, 
+     PRIMARY KEY (material_code)
+);
+
+-- 테이블 Comment 설정 SQL - material_code
+COMMENT ON TABLE material_code IS '자재 코드 테이블';
+
+-- 컬럼 Comment 설정 SQL - material_code.material_code
+COMMENT ON COLUMN material_code.material_code IS '자재코드';
+
+-- 컬럼 Comment 설정 SQL - material_code.material_name
+COMMENT ON COLUMN material_code.material_name IS '자재명';
+
+
+-- material_warehousing Table Create SQL
+-- 테이블 생성 SQL - material_warehousing
+CREATE TABLE material_warehousing
+(
+    in_out_number     INT             NOT NULL, 
+    material_code     VARCHAR2(20)    NOT NULL, 
+    material_count    number          NOT NULL, 
+    in_out_flag       INT             NOT NULL, 
+    in_out_date       DATE            NOT NULL, 
+     PRIMARY KEY (in_out_number)
+);
+
+-- Auto Increment를 위한 Sequence 추가 SQL - material_warehousing.in_out_number
+CREATE SEQUENCE material_warehousing_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- Auto Increment를 위한 Trigger 추가 SQL - material_warehousing.in_out_number
+CREATE OR REPLACE TRIGGER material_warehousing_AI_TRG
+BEFORE INSERT ON material_warehousing 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT material_warehousing_SEQ.NEXTVAL
+    INTO :NEW.in_out_number
+    FROM DUAL;
+END;
+
+-- DROP TRIGGER material_warehousing_AI_TRG; 
+
+-- DROP SEQUENCE material_warehousing_SEQ; 
+
+-- 테이블 Comment 설정 SQL - material_warehousing
+COMMENT ON TABLE material_warehousing IS '입출고 관리 테이블';
+
+-- 컬럼 Comment 설정 SQL - material_warehousing.in_out_number
+COMMENT ON COLUMN material_warehousing.in_out_number IS '등록번호';
+
+-- 컬럼 Comment 설정 SQL - material_warehousing.material_code
+COMMENT ON COLUMN material_warehousing.material_code IS '자재코드';
+
+-- 컬럼 Comment 설정 SQL - material_warehousing.material_count
+COMMENT ON COLUMN material_warehousing.material_count IS '자재개수';
+
+-- 컬럼 Comment 설정 SQL - material_warehousing.in_out_flag
+COMMENT ON COLUMN material_warehousing.in_out_flag IS '입/출고 구분';
+
+-- 컬럼 Comment 설정 SQL - material_warehousing.in_out_date
+COMMENT ON COLUMN material_warehousing.in_out_date IS '날짜';
+
+-- Foreign Key 설정 SQL - material_warehousing(material_code) -> material_code(material_code)
+ALTER TABLE material_warehousing
+    ADD CONSTRAINT FK_material_warehousing_material_code_material_code_material_code FOREIGN KEY (material_code)
+        REFERENCES material_code (material_code) ;
+
+-- Foreign Key 삭제 SQL - material_warehousing(material_code)
+-- ALTER TABLE material_warehousing
+-- DROP CONSTRAINT FK_material_warehousing_material_code_material_code_material_code;
+
+
+-- order_management Table Create SQL
+-- 테이블 생성 SQL - order_management
+CREATE TABLE order_management
+(
+    order_code          VARCHAR2(20)    NOT NULL, 
+    branch_code         VARCHAR2(20)    NOT NULL, 
+    material_code       VARCHAR2(20)    NOT NULL, 
+    material_count      INT             NOT NULL, 
+    application_date    DATE            NOT NULL, 
+    order_status        INT             NOT NULL, 
+    waybill_code        VARCHAR2(25)    NULL, 
+     PRIMARY KEY (order_code)
+);
+
+-- 테이블 Comment 설정 SQL - order_management
+COMMENT ON TABLE order_management IS '발주 관리 테이블';
+
+-- 컬럼 Comment 설정 SQL - order_management.order_code
+COMMENT ON COLUMN order_management.order_code IS '발주코드';
+
+-- 컬럼 Comment 설정 SQL - order_management.branch_code
+COMMENT ON COLUMN order_management.branch_code IS '지점코드';
+
+-- 컬럼 Comment 설정 SQL - order_management.material_code
+COMMENT ON COLUMN order_management.material_code IS '자재코드';
+
+-- 컬럼 Comment 설정 SQL - order_management.material_count
+COMMENT ON COLUMN order_management.material_count IS '개수';
+
+-- 컬럼 Comment 설정 SQL - order_management.application_date
+COMMENT ON COLUMN order_management.application_date IS '신청일자';
+
+-- 컬럼 Comment 설정 SQL - order_management.order_status
+COMMENT ON COLUMN order_management.order_status IS '발주현황';
+
+-- 컬럼 Comment 설정 SQL - order_management.waybill_code
+COMMENT ON COLUMN order_management.waybill_code IS '운송장코드';
+
+-- Foreign Key 설정 SQL - order_management(branch_code) -> cafe_branch(branch_code)
+ALTER TABLE order_management
+    ADD CONSTRAINT FK_order_management_branch_code_cafe_branch_branch_code FOREIGN KEY (branch_code)
+        REFERENCES cafe_branch (branch_code) ;
+
+-- Foreign Key 삭제 SQL - order_management(branch_code)
+-- ALTER TABLE order_management
+-- DROP CONSTRAINT FK_order_management_branch_code_cafe_branch_branch_code;
+
+-- Foreign Key 설정 SQL - order_management(material_code) -> material_code(material_code)
+ALTER TABLE order_management
+    ADD CONSTRAINT FK_order_management_material_code_material_code_material_code FOREIGN KEY (material_code)
+        REFERENCES material_code (material_code) ;
+
+-- Foreign Key 삭제 SQL - order_management(material_code)
+-- ALTER TABLE order_management
+-- DROP CONSTRAINT FK_order_management_material_code_material_code_material_code;
+
+
+-- total_material Table Create SQL
+-- 테이블 생성 SQL - total_material
+CREATE TABLE total_material
+(
+    material_code     VARCHAR2(20)    NOT NULL, 
+    material_name     VARCHAR2(20)    NOT NULL, 
+    branch_code       VARCHAR2(20)    NOT NULL, 
+    material_count    int             NOT NULL
+);
+
+-- 테이블 Comment 설정 SQL - total_material
+COMMENT ON TABLE total_material IS '자재 관리테이블';
+
+-- 컬럼 Comment 설정 SQL - total_material.material_code
+COMMENT ON COLUMN total_material.material_code IS '자재코드';
+
+-- 컬럼 Comment 설정 SQL - total_material.material_name
+COMMENT ON COLUMN total_material.material_name IS '자재명';
+
+-- 컬럼 Comment 설정 SQL - total_material.branch_code
+COMMENT ON COLUMN total_material.branch_code IS '지점코드';
+
+-- 컬럼 Comment 설정 SQL - total_material.material_count
+COMMENT ON COLUMN total_material.material_count IS '개수';
+
+-- Foreign Key 설정 SQL - total_material(material_code) -> material_code(material_code)
+ALTER TABLE total_material
+    ADD CONSTRAINT FK_total_material_material_code_material_code_material_code FOREIGN KEY (material_code)
+        REFERENCES material_code (material_code) ;
+
+-- Foreign Key 삭제 SQL - total_material(material_code)
+-- ALTER TABLE total_material
+-- DROP CONSTRAINT FK_total_material_material_code_material_code_material_code;
+
+
+-- user_management Table Create SQL
+-- 테이블 생성 SQL - user_management
+CREATE TABLE user_management
+(
+    user_id        VARCHAR2(20)    NOT NULL, 
+    user_pw        VARCHAR2(20)    NOT NULL, 
+    authority      INT             NOT NULL, 
+    branch_code    VARCHAR2(20)    NOT NULL, 
+     PRIMARY KEY (user_id)
+);
+
+-- 테이블 Comment 설정 SQL - user_management
+COMMENT ON TABLE user_management IS '유저 관리 테이블';
+
+-- 컬럼 Comment 설정 SQL - user_management.user_id
+COMMENT ON COLUMN user_management.user_id IS '유저 아이디';
+
+-- 컬럼 Comment 설정 SQL - user_management.user_pw
+COMMENT ON COLUMN user_management.user_pw IS '유저 비밀번호';
+
+-- 컬럼 Comment 설정 SQL - user_management.authority
+COMMENT ON COLUMN user_management.authority IS '권한';
+
+-- 컬럼 Comment 설정 SQL - user_management.branch_code
+COMMENT ON COLUMN user_management.branch_code IS '지점코드';
+
+-- Foreign Key 설정 SQL - user_management(branch_code) -> cafe_branch(branch_code)
+ALTER TABLE user_management
+    ADD CONSTRAINT FK_user_management_branch_code_cafe_branch_branch_code FOREIGN KEY (branch_code)
+        REFERENCES cafe_branch (branch_code) ;
+
+-- Foreign Key 삭제 SQL - user_management(branch_code)
+-- ALTER TABLE user_management
+-- DROP CONSTRAINT FK_user_management_branch_code_cafe_branch_branch_code;
+
+

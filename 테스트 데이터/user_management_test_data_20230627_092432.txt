@@ -1,0 +1,10 @@
+﻿INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('root', 'root', 0, 'M00001');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_02', 'user_pw_02', 1, 'B00001');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_03', 'user_pw_03', 1, 'B00002');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_04', 'user_pw_04', 1, 'B00003');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_05', 'user_pw_05', 1, 'B00004');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_06', 'user_pw_06', 1, 'B00005');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_07', 'user_pw_07', 1, 'B00006');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_08', 'user_pw_08', 1, 'B00007');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_09', 'user_pw_09', 1, 'B00008');
+INSERT INTO user_management (user_id, user_pw, authority, branch_code) VALUES ('user_id_10', 'user_pw_10', 1, 'B00009');

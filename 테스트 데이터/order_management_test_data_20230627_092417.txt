@@ -1,0 +1,10 @@
+﻿INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00001', 'B00001', 'MC00001', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00002', 'B00001', 'MC00002', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00003', 'B00001', 'MC00003', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00004', 'B00002', 'MC00001', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00005', 'B00002', 'MC00002', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00006', 'B00002', 'MC00003', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00007', 'B00003', 'MC00001', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00008', 'B00003', 'MC00002', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00009', 'B00003', 'MC00003', 10, sysdate, 0);
+INSERT INTO order_management (order_code, branch_code, material_code, material_count, application_date, order_status) VALUES ('order00010', 'B00003', 'MC00004', 10, sysdate, 0);

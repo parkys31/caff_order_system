@@ -1,0 +1,10 @@
+﻿INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00001', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00002', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00003', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00004', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00005', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00006', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00007', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00008', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00009', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');
+INSERT INTO cafe_branch (branch_code, branch_name, name, tel, address, open_date) VALUES ('B00010', '어딘가', '누군가', '010-1234-1234', '대한민국', '2023년6월27일');

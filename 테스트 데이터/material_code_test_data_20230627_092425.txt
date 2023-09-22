@@ -1,0 +1,10 @@
+﻿INSERT INTO material_code (material_code, material_name) VALUES ('MC00001', '원두1');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00002', '원두2');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00003', '원두3');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00004', '원두4');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00005', '원두5');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00006', '원두6');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00007', '원두7');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00008', '원두8');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00009', '원두9');
+INSERT INTO material_code (material_code, material_name) VALUES ('MC00010', '원두10');

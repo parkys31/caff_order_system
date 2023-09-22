@@ -1,0 +1,10 @@
+﻿INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00001', '원두1', 'B00001', 01);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00002', '원두2', 'B00001', 02);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00003', '원두3', 'B00001', 03);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00001', '원두1', 'B00002', 04);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00002', '원두2', 'B00002', 05);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00003', '원두3', 'B00002', 06);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00001', '원두1', 'B00003', 07);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00002', '원두2', 'B00003', 08);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00003', '원두3', 'B00003', 09);
+INSERT INTO total_material (material_code, material_name, branch_code, material_count) VALUES ('MC00004', '원두4', 'B00003', 10);

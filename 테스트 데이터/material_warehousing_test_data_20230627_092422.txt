@@ -1,0 +1,10 @@
+﻿INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00001', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00002', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00003', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00004', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00005', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00006', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00007', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00008', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00009', 100, 0, sysdate);
+INSERT INTO material_warehousing (material_code, material_count, in_out_flag, in_out_date) VALUES ('MC00010', 100, 0, sysdate);
